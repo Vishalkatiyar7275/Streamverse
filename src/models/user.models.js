@@ -1,7 +1,7 @@
 // Importing required modules
 import mongoose, { Schema } from "mongoose";     // Mongoose is used to model MongoDB documents in Node.js
 import jwt from "jsonwebtoken";                  // JWT (JSON Web Token) is used for generating authentication tokens
-import bcrypt from "bcryptjs";                   // Bcrypt is used to hash and compare passwords securely
+import bcrypt from "bcrypt";                   // Bcrypt is used to hash and compare passwords securely
 
 // Defining the schema for the User collection
 const userSchema = new Schema({
