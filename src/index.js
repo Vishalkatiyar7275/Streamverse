@@ -1,15 +1,18 @@
 import mongoose from "mongoose";
-
 import express from "express";
-const app = express();
+import dotenv from "dotenv";
+dotenv.config();
+// const app = express();
+import { app } from "./app.js"; // ✅ Correct app instance
 import connectDB from "./db/index.js";
 
 //const PORT = process.env.PORT || 8000
 
+
 connectDB()
 .then(() => {
-    app.listen(process.env.port || 8000 , () => {
-        console.log(`Server is running at port ${process.env.PORT || 8000 }`)
+    app.listen(process.env.PORT , () => {
+        console.log(`Server is running at port ${process.env.PORT}`)
     })
 })
 .catch((err)=>{

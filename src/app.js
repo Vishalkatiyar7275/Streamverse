@@ -30,6 +30,16 @@ app.use(express.static('public'));
 // - Makes `req.cookies` available
 app.use(cookieParser());
 
+
+// Import and use routes
+import userRouter from './routes/user.routes.js';
+
+//Routes declaration
+// middleware is used to handle requests due to it is syntax
+app.use('/api/v1/users', userRouter); 
+
+
+
 // Export the configured app instance for use in server.js or other entry points
 export { app };
 

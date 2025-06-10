@@ -8,17 +8,17 @@ class ApiError extends Error {
         statusCode,
         message= "Something went wrong",
         errors=[],
-        statck=""
+        stack=""
     ){
         super(message);                // Call base Error class with message
         this.statusCode = statusCode;  // HTTP status code for response
         this.errors = errors;          // Detailed error array (optional)
-        this.statck = statck;          // Stored stack trace string (typo here)
+        this.stack = stack;            // Stored stack trace string (typo here)
         this.data = null;              // Placeholder for any additional data
         this.success = false;          // Flag indicating failure
 
-        if(statck) {
-            this.statck = statck;
+        if(stack) {
+            this.stack = stack;
         }
         else {
             // Captures the stack trace for this error, excluding constructor frames
